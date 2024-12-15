@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .navbar {
+            background-color: lightblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            background-color: white;
+            border-radius: 15px;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.5);
+        }
+        .description-section {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .gallery-item-details {
+            padding: 10px;
+            text-align: center;
+        }
+        .video-section {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Photo Gallery</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="all.html">All</a>
+            <a href="nature.html">Nature</a>
+            <a href="animal.html">Animal</a>
+            <a href="architecture.html">Architecture</a>
+            <a href="people.html">People</a>
+        </div>
+    </nav>
+
+    <div class="description-section">
+        <h2>Moments Captured, Stories Told</h2>
+        <h3>Experience the beauty of life through every frame.</h3>
+        <p>Welcome to a world where every picture speaks a thousand emotions. 
+        From stunning landscapes to candid portraits, discover the art of storytelling through photography. 
+        Each image captures a fleeting moment, frozen in time for you to cherish forever. 
+        Step into this visual journey and let your imagination wander through every frame.</p>
+    </div>
+
+    <div class="video-section">
+        <h2></h2>
+        <div class="video-container">
+            <iframe 
+                src="DEMO.mp4" 
+                title="Photo Gallery Project Demo" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="mount.jpg" alt="Serene Landscape">
+            <div class="gallery-item-details">
+                <h3>Mountain Sunrise</h3>
+                <p>A breathtaking view of mountains at dawn.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="whitelion.jpg" alt="Wildlife Photography">
+            <div class="gallery-item-details">
+                <h3>Lion's Pride</h3>
+                <p>A majestic lion in its natural habitat.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="building.jpg" alt="Modern Architecture">
+            <div class="gallery-item-details">
+                <h3>Urban Skyline</h3>
+                <p>Modern buildings against a sunset backdrop.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
