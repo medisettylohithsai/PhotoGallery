@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Photos - Photo Gallery</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background-color: lightblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-sizing: border-box;
+        }
+        .logo {
+            background-color: white;
+            border-radius: 15px;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .nav-links a:hover {
+            background-color: rgba(255,255,255,0.5);
+        }
+        .content {
+            margin-top: 150px; /* Adjust based on navbar height */
+            padding: 20px;
+        }
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        .search-bar {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid lightblue;
+            border-radius: 20px;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.5);
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            transition: 0.5s ease;
+        }
+        .gallery-item:hover .image-overlay {
+            height: 50px;
+        }
+        .overlay-text {
+            color: white;
+            font-size: 14px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            Photo Gallery
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="all.html">All</a>
+            <a href="nature.html">Nature</a>
+            <a href="animal.html">Animal</a>
+            <a href="architecture.html">Architecture</a>
+            <a href="people.html">People</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search photos...">
+        </div>
+
+        <div class="gallery">
+            <!-- Example images - replace with your actual 30-40 images -->
+            <div class="gallery-item">
+                <img src="cat.jpg" alt="Image 1">
+                <div class="image-overlay">
+                    <div class="overlay-text">image of cat</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="tiger.jpg" alt="Image 2">
+                <div class="image-overlay">
+                    <div class="overlay-text">image of tigers</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="cow.jpg" alt="Image ">
+                <div class="image-overlay">
+                    <div class="overlay-text">cow</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="cock.jpg" alt="Image 2">
+                <div class="image-overlay">
+                    <div class="overlay-text">Cock</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="chicks.jpg" alt="Image 2">
+                <div class="image-overlay">
+                    <div class="overlay-text">image of chicks</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="lion.jpg" alt="Image 2">
+                <div class="image-overlay">
+                    <div class="overlay-text">image of lion</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="monkey.jpg" alt="Image 2">
+                <div class="image-overlay">
+                    <div class="overlay-text">image of monkey</div>
+
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="elephant.jpg" alt="Image 2">
+                <div class="image-overlay">
+                    <div class="overlay-text">image of elephant</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="squaril.jpg" alt="Image 2">
+                <div class="image-overlay">
+                    <div class="overlay-text">image of squaril</div>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="hourse.jpg" alt="Image 2">
+                <div class="image-overlay">
+                    <div class="overlay-text">image of hourse</div>
+                </div>
+            </div>
+            
+            <!-- Repeat this block for 30-40 images -->
+            <!-- You'll replace placeholder images with your actual images -->
+        </div>
+    </div>
+
+    <script>
+        // Simple search functionality
+        document.querySelector('.search-bar').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            galleryItems.forEach(item => {
+                const altText = item.querySelector('img').alt.toLowerCase();
+                const overlayText = item.querySelector('.overlay-text').textContent.toLowerCase();
+                
+                if (altText.includes(searchTerm) || overlayText.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
